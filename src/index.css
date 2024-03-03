@@ -1,17 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
 html{
   scroll-behavior: smooth;
 }
 
 *{
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+
 }
 
 body{
   background-color:#040714;
   color: #fff;
-  font-family: Avenir-Roman, sans-serif;
+  font-family: "Fira Code", sans-serif;
+
 }
 
 a{
