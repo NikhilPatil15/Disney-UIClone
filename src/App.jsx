@@ -2,7 +2,7 @@ import { useState } from "react";
 import { BrowserRouter, Route, Routes} from "react-router-dom";
 
 import "./App.css";
-import { Login } from "./components";
+import { Header, Login } from "./components";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -10,6 +10,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <Header/>
         <Routes>
           <Route exact path="/" element={<Login/>}/>
         </Routes>

@@ -13,7 +13,7 @@ body{
   background-color:#040714;
   color: #fff;
   font-family: "Fira Code", sans-serif;
-
+  overflow-y: hidden;
 }
 
 a{

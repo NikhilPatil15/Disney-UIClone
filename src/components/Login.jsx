@@ -1,18 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import {Link} from 'react-router-dom'
 const Login = () => {
   return (
     <Container>
       <Content>
         <CTA>
-          <LogoOne src="../public/images/cta-logo-one.svg" alt="First-Logo" />
-          <Button>Get it all here</Button>
+          <LogoOne src="../images/cta-logo-one.svg" alt="First-Logo" />
+          <Button to='/'>Get it all here</Button>
           <Description>
             Get Premier Access to Raya and the Last Dragon for an additional fee
             with a Disney+ subscription. As of 03/26/21, the price of Disney+
             and The Disney Bundle will increase by $1.
           </Description>
-          <LogoTwo src='../public/images/cta-logo-two.png'/>
+          <LogoTwo src='../images/cta-logo-two.png'/>
         </CTA>
         <BgImage />
       </Content>
@@ -71,7 +72,7 @@ const LogoOne = styled.img`
   margin-bottom: 12px;
 `;
 
-const Button = styled.a`
+const Button = styled(Link)`
   background-color: #0063e5;
   text-align: center;
   width: 100%;
