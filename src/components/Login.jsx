@@ -46,7 +46,7 @@ const BgImage = styled.div`
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
-  background-image: url("../public/images/login-background.jpg");
+  background-image: url("../images/login-background.jpg");
   position: absolute;
   left: 0;
   right: 0;
