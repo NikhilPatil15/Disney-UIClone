@@ -64,7 +64,7 @@ const Header = () => {
       ) : (
         <>
           <NavItems>
-            <Link>
+            <Link to={"/home"}>
               <img src="../images/home-icon.svg" alt="Home" />
               <span>HOME</span>
             </Link>
@@ -161,10 +161,11 @@ const NavItems = styled.nav`
 
     span {
       position: relative;
+      top:3px;
       letter-spacing: 3px;
       line-height: 1.4;
       white-space: nowrap;
-      font-size: 15px;
+      font-size: 18px;
 
       &:before {
         content: "";
