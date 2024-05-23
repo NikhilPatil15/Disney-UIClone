@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { auth, provider } from "../firebase";
@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { setSignOut, setUserLogin } from "../redux/features/user";
 
 const Header = () => {
+  const myref = useRef(null);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const userName = useSelector((state) => state.user.name);
@@ -59,6 +60,10 @@ const Header = () => {
           <Logo src="../images/logo.svg" />
         </Link>
       </LogoArea>
+      {/* <NavItems className="drop">
+        <img src="../images/dropdown.png"/>
+       </NavItems> */}
+      
       {!userName ? (
         <LoginButton onClick={handleAuth}>Login</LoginButton>
       ) : (
@@ -116,6 +121,19 @@ const NavBar = styled.div`
   background-color: #040714;
   width: 100%;
   padding: 2rem;
+
+  /* .drop{
+    display: none;
+  } */
+
+  /* @media (max-width:768px) {
+    .drop{
+      display:block;
+      width: fit-content;
+      background-color: white;
+    } */
+  
+
 `;
 
 const LogoArea = styled(Link)`
@@ -123,6 +141,8 @@ const LogoArea = styled(Link)`
   width: 100px;
   max-height: 80px;
 `;
+
+
 
 const Logo = styled.img`
   display: block;
@@ -191,6 +211,10 @@ const NavItems = styled.nav`
         opacity: 1 !important;
       }
     }
+  }
+  @media (max-width:1200px){
+    display: none;
+
   }
 `;
 
