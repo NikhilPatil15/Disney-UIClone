@@ -25,25 +25,25 @@ const Header = () => {
     );
   };
 
-  const isMobileDevice = () => {
-    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-  };
+  function detectMob() {
+    return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 600 ) );
+  }
 
   const handleAuth = () => {
     if (!userName) {
-      if (isMobileDevice()) {
+     if(detectMob()){
         signInWithRedirect(auth, provider)
           .then((result) => {
             setUser(result.user);
           })
           .catch((error) => alert(error.message));
-      } else {
-        signInWithPopup(auth, provider)
-          .then((result) => {
-            setUser(result.user);
-          })
-          .catch((error) => alert(error.message));
-      }
+        }else{
+          signInWithPopup(auth, provider)
+      .then((result) => {
+        setUser(result.user);
+      })
+      .catch((error) => alert(error.message));
+        }
     } else {
       signOut(auth)
         .then(() => {
